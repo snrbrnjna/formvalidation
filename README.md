@@ -1,15 +1,5 @@
 # FormValidation
 
-## Install
-
-Install via [bower](http://bower.io/):
-
-``` bash 
-bower install form.validation
-```
-
-Or download the latest script and stylesheet files from [formvalidation.io](http://formvalidation.io/download/).
-
 [http://formvalidation.io](http://formvalidation.io) - The best [jQuery](http://jquery.com/) plugin to validate form fields, designed to use with:
 
 - [x] [Bootstrap](http://getbootstrap.com/)
@@ -21,6 +11,18 @@ Or download the latest script and stylesheet files from [formvalidation.io](http
 It's developed from scratch by [@nghuuphuoc](http://twitter.com/nghuuphuoc).
 
 __Required__: [jQuery 1.9.1+](http://jquery.com/)
+
+## Install
+
+Install via [bower](http://bower.io/):
+
+``` bash 
+bower install form.validation
+```
+
+Or download the latest script and stylesheet files from [formvalidation.io](http://formvalidation.io/download/).
+
+## Screens
 
 Screenshots first because we love it!
 
