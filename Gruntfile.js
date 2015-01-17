@@ -142,6 +142,16 @@ module.exports = function(grunt) {
             }
         },
 
+        bump: {
+            options: {
+                files: ['package.json', 'bower.json'],
+                updateConfigs: ['pkg'],
+                push: false,
+                pushTo: 'origin',
+                commitFiles: ['-a']
+            }
+        },
+
         jshint: {
             all: [
                 '<%= dirs.src %>/js/**/*.js'
@@ -187,10 +197,23 @@ module.exports = function(grunt) {
     grunt.registerTask('default', 'build');
     grunt.registerTask('build',   ['copy', 'cssmin', 'concat', 'uglify']);
 
+    grunt.registerTask('releaseLib', function (target) {
+        if (target) {
+            grunt.task.run([
+                'bump-only:' + target,
+                'build',
+                'bump-commit'
+            ]);
+        } else {
+            grunt.warn('no target given for bump task. Has to be one of "patch", "minor", "mayor"');
+        }
+    });
+
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-bump');
 };
